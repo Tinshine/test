@@ -11,9 +11,7 @@ import (
 func main() {
 	h := server.Default()
 	h.GET("/ping", func(c context.Context, ctx *app.RequestContext) {
-		ctx.JSON(consts.StatusOK, map[string]interface{}{
-			"data": "pong",
-		})
+		ctx.String(consts.StatusOK, "pong")
 	})
 	h.Spin()
 }
